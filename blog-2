@@ -1,0 +1,18 @@
+# set fig size
+fig, ax = plt.subplots(figsize=(10, 3)) 
+# no axes
+ax.xaxis.set_visible(False) 
+ax.yaxis.set_visible(False) 
+# no frame
+ax.set_frame_on(False) 
+# plot table
+tab = table(ax,
+            df,
+            loc='upper right',
+            colWidths=[0.2]*len(df.columns)) 
+# set font manually
+tab.auto_set_font_size(False)
+tab.set_fontsize(10)
+tab.scale(2, 2)
+# save the result
+plt.savefig('table.png')
